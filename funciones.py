@@ -162,7 +162,7 @@ class Modelo:
         messagebox.showinfo("Informacion", """
             Version: 0.1
             Trabajo final PYTHON INICIAL
-            Alumno: Escalante Elias, Rubio Imelda, Sanchez Carmen, Pasini Franco, Videla Milagros
+            Alumno: Escalante Elias, Rubio Imelda, Sanchez Carmen, Osmery Gonzalez
 
             Descripcion: 
             Aplicacion de escritorio desarrollada con Python/Tkinter. Realiza un CRUD sobre una base de datos, y muestra el resultado en un treeview.
