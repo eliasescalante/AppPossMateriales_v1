@@ -1,7 +1,5 @@
 # Proyecto de la diplomatura en Python 3
 ----
-## Versión mejorada de la aplicación "Pos Materiales"
-----
 ## Descripcion:
 ### Aplicacion de escritorio desarrollada con Python que permite realizar un CRUD a una base de datos. 
 ### Se desarrollo usando el paradigma de POO, se utilizo el ORM peewee para la comunicacion con la DB
