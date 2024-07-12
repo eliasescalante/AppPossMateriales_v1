@@ -74,7 +74,7 @@ class Modelo:
                     producto.id, producto.producto,
                     producto.stock, producto.costo,
                     producto.venta, producto.proveedor,
-                    str(producto))
+                    producto)
                 )
         else:
             messagebox.showwarning("Error", f"No se encontro resultados para **{pro}**")
@@ -117,7 +117,7 @@ class Modelo:
                     registro.id, registro.producto, 
                     registro.stock, registro.costo, 
                     registro.venta, registro.proveedor,
-                    str(registro)))
+                    registro))
                 print("registro insertado...")
             else:
                 messagebox.showerror(
@@ -169,3 +169,6 @@ class Modelo:
             Descripcion: 
             Aplicacion de escritorio desarrollada con Python/Tkinter. Realiza un CRUD sobre una base de datos, y muestra el resultado en un treeview.
         """)
+
+    def __str__(self):
+        return f"Aplicacion de CRUD con Tkinter y SQLite"

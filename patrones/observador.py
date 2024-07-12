@@ -40,7 +40,7 @@ class ObservadorInicio:
     Clase que implementa el patron observador para vigilar el inicio de la aplicacion
     """
     def update_inicio(self, date):
-        print("La aplicación ha sido inicializada correctamente y finalizada.")
+        print("La aplicación ha sido inicializada")
         base = LogRegistro()
         base.accion = "Inicio de la aplicación"
         base.fecha = date.date()

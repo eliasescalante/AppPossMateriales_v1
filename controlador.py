@@ -18,11 +18,11 @@ def main():
     db = CrearBaseDatos()
     db.crear_base_datos()
 
+    vigilante.notificar_observador_inicio()
     app = Tk()
     Vista(app)
     app.mainloop()
 
-    vigilante.notificar_observador_inicio()
 
 if __name__ == "__main__":
     main()
