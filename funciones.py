@@ -6,7 +6,6 @@ from modelo import BaseDatos
 from decoradores import log_evento
 
 
-
 class Modelo:
     """
     Clase para realizar el CRUD sobre la base de datos
@@ -69,14 +68,17 @@ class Modelo:
         La consulta la realiza utilizando el producto.
         """
         productos = BaseDatos.select().where(BaseDatos.producto.contains(pro))
+        if productos:
+            for producto in productos:
+                arbol.insert('', 'end', values=(
+                    producto.id, producto.producto,
+                    producto.stock, producto.costo,
+                    producto.venta, producto.proveedor,
+                    str(producto))
+                )
+        else:
+            messagebox.showwarning("Error", f"No se encontro resultados para **{pro}**")
 
-        for producto in productos:
-            arbol.insert('', 'end', values=(
-                producto.id, producto.producto,
-                producto.stock, producto.costo,
-                producto.venta, producto.proveedor,
-                str(producto))
-            )
     @log_evento
     def modificar(self, tree, pro, st, costo, venta, prov, entry_list):
         """
