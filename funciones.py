@@ -47,6 +47,7 @@ class Modelo:
         base.costo = float(costo)
         base.venta = float(venta)
         base.proveedor = proveedor
+        
         base.save()
 
         for record in tree.get_children():
@@ -171,4 +172,4 @@ class Modelo:
         """)
 
     def __str__(self):
-        return f"Aplicacion de CRUD con Tkinter y SQLite"
+        return "Clase que realiza todo el control sobre la vista"

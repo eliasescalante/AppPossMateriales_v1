@@ -21,7 +21,7 @@ class Vista:
         self.modelo = Modelo()
 
         self.app.title("Aplicacion Pos - Proyecto Final")
-        self.app.geometry("900x350")
+        self.app.geometry("1050x350")
         self.vista_principal()
 
     def vista_principal(self):
@@ -121,7 +121,7 @@ class Vista:
         tree.column("col3", width=120, minwidth=50, anchor=W)
         tree.column("col4", width=120, minwidth=50, anchor=W)
         tree.column("col5", width=120, minwidth=50, anchor=W)
-        tree.column("col6", width=280, minwidth=100, anchor=W)
+        tree.column("col6", width=400, minwidth=100, anchor=W)
 
         tree.heading("col0", text="ID")
         tree.heading("col1", text="Producto")
@@ -145,3 +145,6 @@ class Vista:
         large_image_label.place(x=540, y=5)
         # Guardo la referencia a la etiqueta en una variable global
         self.large_image_label = large_image_label
+    
+    def __str__(self):
+        return f"Vista de la aplicación {self.app.title}"
