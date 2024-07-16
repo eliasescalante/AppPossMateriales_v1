@@ -38,12 +38,18 @@ class Modelo:
             return
 
         patron_precio = r"^\d+(\.\d+)?$"
+        patron_entero = r"^-?\d+$"
+
         if not re.match(patron_precio, str(costo)):
             messagebox.showwarning("Error", "El valor del precio del costo debe ser un número")
             return
 
         if not re.match(patron_precio, str(venta)):
             messagebox.showwarning("Error","El valor del precio de venta debe ser un número.")
+            return
+        
+        if not re.match(patron_entero, stock):
+            messagebox.showwarning("Error", "El valor del stock debe ser un número entero")
             return
 
         base = BaseDatos()
