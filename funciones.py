@@ -4,12 +4,17 @@ import re
 from peewee import *
 from modelo import BaseDatos
 from decoradores import log_evento
+from patrones.observador import ObservableInicio, ObservadorInicio
 
 
 class Modelo:
     """
     Clase para realizar el CRUD sobre la base de datos
     """
+    def __init__(self):
+        self.observable = ObservableInicio()
+        self.observador = ObservadorInicio()
+        self.observable.agregar_observador(self.observador)
 
     def limpiar_tree(self, tree, entry_list):
         """
@@ -22,7 +27,7 @@ class Modelo:
         for entry in entry_list:
             entry.delete(0, END)
 
-    @log_evento
+    
     def alta(self, producto, stock, costo, venta, proveedor, tree):
         """
         Permite dar de alta a un registro en la base de datos "DB_PRODUCTOS"
@@ -61,6 +66,11 @@ class Modelo:
             nuevo_registro.costo, nuevo_registro.venta, nuevo_registro.proveedor,
             str(nuevo_registro))
         )
+
+        # Notifico a los observadores
+        self.observable.notificar_observador_alta(nuevo_registro)
+
+
     @log_evento
     def consultar(self, pro, arbol):
         """

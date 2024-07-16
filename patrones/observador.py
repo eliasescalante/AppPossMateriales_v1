@@ -34,6 +34,14 @@ class ObservableInicio:
         date = datetime.datetime.now()
         for observer in self.observers:
             observer.update_inicio(date)
+    
+    def notificar_observador_alta(self, registro):
+        """
+        Notifica a los observadores que se ha realizado un alta de registro
+        """
+        date = datetime.datetime.now()
+        for observer in self.observers:
+            observer.update_alta(date, registro)
 
 class ObservadorInicio:
     """
@@ -48,3 +56,11 @@ class ObservadorInicio:
         base.usuario = "anonimo"
         base.save()
 
+    def update_alta(self, date, registro):
+        print(f"Se ha registrado un nuevo alta: {registro}")
+        base = LogRegistro()
+        base.accion = f"Alta de registro: {registro}"
+        base.fecha = date.date()
+        base.hora = date.time()
+        base.usuario = "anonimo"
+        base.save()
