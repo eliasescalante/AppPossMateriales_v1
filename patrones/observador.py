@@ -43,9 +43,10 @@ class ObservableInicio:
         for observer in self.observers:
             observer.update_alta(date, registro)
 
-class ObservadorInicio:
+class ObservadorRegistro:
     """
-    Clase que implementa el patron observador para vigilar el inicio de la aplicacion
+    Clase para registrar en la DB lo que el observador registra en la
+    tabla LogRegistro
     """
     def update_inicio(self, date):
         print("La aplicación ha sido inicializada")

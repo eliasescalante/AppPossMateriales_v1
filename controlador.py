@@ -3,7 +3,7 @@ Modulo para iniciar la aplicacion
 """
 
 from tkinter import Tk
-from patrones.observador import ObservableInicio, ObservadorInicio
+from patrones.observador import ObservableInicio, ObservadorRegistro
 from modelo import CrearBaseDatos
 from vista import Vista
 
@@ -14,7 +14,7 @@ def main():
     """
     # instancio la clase con el patron observador
     vigilante = ObservableInicio()
-    vigia = ObservadorInicio()
+    vigia = ObservadorRegistro()
     vigilante.agregar_observador(vigia)
     # Crear la base de datos
     db = CrearBaseDatos()

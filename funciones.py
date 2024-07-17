@@ -4,7 +4,7 @@ import re
 from peewee import *
 from modelo import BaseDatos
 from decoradores import log_evento
-from patrones.observador import ObservableInicio, ObservadorInicio
+from patrones.observador import ObservableInicio, ObservadorRegistro
 
 
 class Modelo:
@@ -13,7 +13,7 @@ class Modelo:
     """
     def __init__(self):
         self.observable = ObservableInicio()
-        self.observador = ObservadorInicio()
+        self.observador = ObservadorRegistro()
         self.observable.agregar_observador(self.observador)
 
     def limpiar_tree(self, tree, entry_list):
