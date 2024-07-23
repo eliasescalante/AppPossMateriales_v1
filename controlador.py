@@ -3,28 +3,28 @@ Modulo para iniciar la aplicacion
 """
 
 from tkinter import Tk
-from patrones.observador import ObservableInicio, ObservadorRegistro
 from modelo import CrearBaseDatos
-from vista import Vista
+import vista
+from patrones.observador import ConcreteObserverA
 
-def main():
+class Main():
     """
-    Funcion principal
+    clase principal
     Para iniciar la aplicacion
     """
-    # instancio la clase con el patron observador
-    vigilante = ObservableInicio()
-    vigia = ObservadorRegistro()
-    vigilante.agregar_observador(vigia)
+    def __init__(self, root):
+        self.root_controller = root
+        self.objeto_vista = vista.Vista(self.root_controller)
+        self.observador_a = ConcreteObserverA(self.objeto_vista.modelo)
+
+if __name__ == "__main__":
     # Crear la base de datos
     db = CrearBaseDatos()
     db.crear_base_datos()
-    # Crear la ventana principal e inicia el vigilante
-    vigilante.notificar_observador_inicio()
+
     app = Tk()
-    Vista(app)
+    aplicacion = Main(app)
     app.mainloop()
 
 
-if __name__ == "__main__":
-    main()
+

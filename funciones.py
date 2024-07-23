@@ -4,17 +4,13 @@ import re
 from peewee import *
 from modelo import BaseDatos
 from decoradores import log_evento
-from patrones.observador import ObservableInicio, ObservadorRegistro
+from patrones.observador import Sujeto
 
 
-class Modelo:
+class Modelo(Sujeto):
     """
     Clase para realizar el CRUD sobre la base de datos
     """
-    def __init__(self):
-        self.observable = ObservableInicio()
-        self.observador = ObservadorRegistro()
-        self.observable.agregar_observador(self.observador)
 
     def limpiar_tree(self, tree, entry_list):
         """
@@ -27,7 +23,7 @@ class Modelo:
         for entry in entry_list:
             entry.delete(0, END)
 
-    
+    @log_evento
     def alta(self, producto, stock, costo, venta, proveedor, tree):
         """
         Permite dar de alta a un registro en la base de datos "DB_PRODUCTOS"
@@ -52,14 +48,15 @@ class Modelo:
             messagebox.showwarning("Error", "El valor del stock debe ser un número entero")
             return
 
-        base = BaseDatos()
-        base.producto = producto
-        base.stock = int(stock)
-        base.costo = float(costo)
-        base.venta = float(venta)
-        base.proveedor = proveedor
-        
-        base.save()
+        nuevo_producto = BaseDatos(
+            producto=producto,
+            stock=int(stock),
+            costo=float(costo),
+            venta=float(venta),
+            proveedor=proveedor
+        )
+        nuevo_producto.save()
+        self.notificar()
 
         for record in tree.get_children():
             tree.delete(record)
@@ -73,11 +70,8 @@ class Modelo:
             str(nuevo_registro))
         )
 
-        # Notifico a los observadores
-        self.observable.notificar_observador_alta(nuevo_registro)
 
 
-    @log_evento
     def consultar(self, pro, arbol):
         """
         Realiza una consulta a la base de datos "db_producto"
