@@ -56,7 +56,7 @@ class Modelo(Sujeto):
             proveedor=proveedor
         )
         nuevo_producto.save()
-        self.notificar()
+        self.notificar(producto, stock)
 
         for record in tree.get_children():
             tree.delete(record)

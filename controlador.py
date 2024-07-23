@@ -25,6 +25,3 @@ if __name__ == "__main__":
     app = Tk()
     aplicacion = Main(app)
     app.mainloop()
-
-
-

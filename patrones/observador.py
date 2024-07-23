@@ -8,9 +8,9 @@ class Sujeto:
     def quitar(self, obj):
         pass
 
-    def notificar(self):
+    def notificar(self, *args):
         for observador in self.observadores:
-            observador.update()
+            observador.update(args)
 
 
 class TemaConcreto(Sujeto):
@@ -35,7 +35,8 @@ class ConcreteObserverA(Observador):
         self.observador_a = obj
         self.observador_a.agregar(self)
 
-    def update(self):
+    def update(self, *args):
         print("Actualización dentro de ObservadorConcretoA")
+        print("Info: ", args)
         #self.estado = self.observador_a.get_estado()
         #print("Estado = ", self.estado)
