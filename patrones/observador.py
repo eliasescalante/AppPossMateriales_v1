@@ -1,3 +1,5 @@
+import datetime
+
 class Sujeto:
 
     observadores = []
@@ -40,3 +42,7 @@ class ConcreteObserverA(Observador):
         print("Info: ", args)
         #self.estado = self.observador_a.get_estado()
         #print("Estado = ", self.estado)
+        date = datetime.datetime.now()
+        registro_log = f"{date} - {args}\n"
+        with open("log.txt", "a") as f:
+            f.write(registro_log)

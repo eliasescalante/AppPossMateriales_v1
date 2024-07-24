@@ -70,8 +70,6 @@ class Modelo(Sujeto):
             str(nuevo_registro))
         )
 
-
-
     def consultar(self, pro, arbol):
         """
         Realiza una consulta a la base de datos "db_producto"
