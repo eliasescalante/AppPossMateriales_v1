@@ -15,6 +15,9 @@ def log_evento(func):
     def registro(*args, **kwargs):
         date = datetime.datetime.now()
         print(f"{date}: Se ha realizado la acción de '{func.__name__}' en la base de datos")
+        registro_log = f"{date} - se ha realizado la accion de '**{func.__name__}**'\n"
+        with open("log.txt", "a") as f:
+            f.write(registro_log)
         return func(*args, **kwargs)
 
     return registro

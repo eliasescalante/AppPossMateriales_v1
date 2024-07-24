@@ -1,2 +1,3 @@
-2024-07-24 16:15:11.757759 - (('Variedad gall.x456gr', '23'),)
-2024-07-24 16:15:39.824357 - (('Higienol P.Higienico', '34'),)
+2024-07-24 20:44:44.826936 - se ha realizado la accion de '**consultar**'
+2024-07-24 20:52:39.119519 - se ha realizado la accion de '**alta**'
+2024-07-24 20:56:35.919551 - se ha realizado la accion de '**alta**'

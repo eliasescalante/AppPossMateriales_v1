@@ -1,4 +1,5 @@
 import datetime
+from modelo import LogRegistro
 
 class Sujeto:
 
@@ -42,7 +43,20 @@ class ConcreteObserverA(Observador):
         print("Info: ", args)
         #self.estado = self.observador_a.get_estado()
         #print("Estado = ", self.estado)
-        date = datetime.datetime.now()
-        registro_log = f"{date} - {args}\n"
-        with open("log.txt", "a") as f:
-            f.write(registro_log)
+        # Obtener la fecha y hora actual
+        ahora = datetime.datetime.now()
+        fecha = ahora.strftime('%Y-%m-%d')
+        hora = ahora.strftime('%H:%M:%S')
+        
+        # Obtener el usuario actual (esto es un ejemplo; ajusta según tu aplicación)
+        usuario = "anonimo"
+
+        # Registrar el evento en la base de datos
+        LogRegistro.create(
+            accion=f"alta de registro - {args}",
+            fecha=fecha,
+            hora=hora,
+            usuario=usuario
+        )
+
+        

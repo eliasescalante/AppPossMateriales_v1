@@ -69,7 +69,7 @@ class Modelo(Sujeto):
             nuevo_registro.costo, nuevo_registro.venta, nuevo_registro.proveedor,
             str(nuevo_registro))
         )
-
+    @log_evento
     def consultar(self, pro, arbol):
         """
         Realiza una consulta a la base de datos "db_producto"
