@@ -53,7 +53,7 @@ class ConcreteObserverA(Observador):
 
         # Registrar el evento en la base de datos
         LogRegistro.create(
-            accion=f"alta de registro - {args}",
+            accion=f"alta de un nuevo registro - {args}",
             fecha=fecha,
             hora=hora,
             usuario=usuario

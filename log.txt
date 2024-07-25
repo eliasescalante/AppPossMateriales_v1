@@ -1,3 +1,3 @@
-2024-07-24 20:44:44.826936 - se ha realizado la accion de '**consultar**'
-2024-07-24 20:52:39.119519 - se ha realizado la accion de '**alta**'
-2024-07-24 20:56:35.919551 - se ha realizado la accion de '**alta**'
+2024-07-25 18:05:28.252818 - se ha realizado la accion de '**alta**'
+2024-07-25 18:07:59.622235 - se ha realizado la accion de '**alta**'
+2024-07-25 18:09:01.319804 - se ha realizado la accion de '**alta**'
