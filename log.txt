@@ -1,3 +1,4 @@
 2024-07-25 18:05:28.252818 - se ha realizado la accion de '**alta**'
 2024-07-25 18:07:59.622235 - se ha realizado la accion de '**alta**'
 2024-07-25 18:09:01.319804 - se ha realizado la accion de '**alta**'
+2024-07-26 20:19:13.950574 - se ha realizado la accion de '**consultar**'

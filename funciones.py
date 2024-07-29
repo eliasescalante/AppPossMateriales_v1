@@ -102,7 +102,7 @@ class Modelo(Sujeto):
         else:
             messagebox.showerror("modificar", "debes seleccionar un registro")
             print("salto el if...")
-            return 
+            return
 
         registro = BaseDatos.get_or_none(BaseDatos.id == id_seleccionado)
 
