@@ -2,3 +2,9 @@
 2024-07-25 18:07:59.622235 - se ha realizado la accion de '**alta**'
 2024-07-25 18:09:01.319804 - se ha realizado la accion de '**alta**'
 2024-07-26 20:19:13.950574 - se ha realizado la accion de '**consultar**'
+2024-07-31 16:45:48.161016 - se ha realizado la accion de '**MyTCPHandler**'
+
+2024-07-31 16:49:41.091549 - El cliente consulto en la base de datos
+
+2024-07-31 16:51:55.612972 - El cliente consulto en la base de datos
+2024-07-31 17:02:54.893210 - El cliente consulto en la base de datos
