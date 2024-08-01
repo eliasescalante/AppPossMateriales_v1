@@ -187,6 +187,9 @@ class Modelo(Sujeto):
         """)
 
     def iniciar_servidor(self):
+        """
+        funcion para prender el servidor
+        """
         if self.server is None:
             self.server = subprocess.Popen(["python", "server.py"])
             return "Servidor iniciado"
@@ -194,6 +197,9 @@ class Modelo(Sujeto):
             return "El servidor ya está en ejecución"
 
     def detener_servidor(self):
+        """
+        funcion para detener el servidor
+        """
         if self.server is not None:
             self.server.terminate()
             self.server.wait()

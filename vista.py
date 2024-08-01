@@ -139,18 +139,20 @@ class Vista:
         tree.heading("col6", text="Nota")
         tree.place(x=50, y=160)
 
-        # Cargar imágenes
+        # Cargo la imagen
         self.load_images()
 
     def load_images(self):
-        # Imagen grande, principal
+        """
+        Funcion para cargar y
+        posicionar la imagen en la app
+        """
         large_image = Image.open("img/logo.png")
         large_image = large_image.resize((300, 140))
         large_photo = ImageTk.PhotoImage(large_image)
         large_image_label = Label(self.app, image=large_photo)
         large_image_label.image = large_photo
         large_image_label.place(x=540, y=5)
-        # Guardo la referencia a la etiqueta en una variable global
         self.large_image_label = large_image_label
     
     def __str__(self):

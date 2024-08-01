@@ -14,6 +14,7 @@ def log_evento(func):
     """
     def registro(*args, **kwargs):
         date = datetime.datetime.now()
+        # uso una estructura condicional para detectar cuando se usa la funcion de la clase server y grabar en el registro log.txt
         if func.__name__ == "MyTCPHandler":
             print(f"{date}: El cliente consulto en la base de datos")
             registro_log = f"{date} - El cliente consulto en la base de datos"
@@ -22,6 +23,7 @@ def log_evento(func):
                 f.write(registro_log + "\n")
             return func(*args, **kwargs)
         else:
+            # si no se usa esa funcion entonces genero el registro log.txt normalmente
             print(f"{date}: Se ha realizado la acción de '{func.__name__}' en la base de datos")
             registro_log = f"{date} - se ha realizado la accion de '**{func.__name__}**'"
             print(registro_log)
