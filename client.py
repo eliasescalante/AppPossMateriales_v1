@@ -34,6 +34,10 @@ def consultar_producto(producto):
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    #solicito al usuario el nombre del producto a consultar
-    producto = input("Ingrese el nombre del producto a consultar: ")
-    consultar_producto(producto)
+    desicion = "si"
+    while desicion.lower() == "si":
+        #solicito al usuario el nombre del producto a consultar
+        producto = input("Ingrese el nombre del producto a consultar: ")
+        consultar_producto(producto)
+        desicion = input("queres consultar otro material?")
+    print("Gracias por probar nuestra app")
