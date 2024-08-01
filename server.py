@@ -20,8 +20,8 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
             if action == 'consultar' and product_name:
                 productos = BaseDatos.select().where(BaseDatos.producto.contains(product_name))
                 if productos:
-                    response['status'] = 'success'
-                    response['data'] = [
+                    response['Estado de la consulta'] = 'exitoso'
+                    response['consulta'] = [
                         {
                             'id': p.id,
                             'producto': p.producto,

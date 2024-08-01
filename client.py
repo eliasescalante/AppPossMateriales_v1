@@ -29,5 +29,3 @@ def consultar_producto(producto):
 if __name__ == "__main__":
     producto = input("Ingrese el nombre del producto a consultar: ")
     consultar_producto(producto)
-
-

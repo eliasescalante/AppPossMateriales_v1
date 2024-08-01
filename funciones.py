@@ -5,12 +5,16 @@ from peewee import *
 from modelo import BaseDatos
 from decoradores import log_evento
 from patrones.observador import Sujeto
+import subprocess
 
 
 class Modelo(Sujeto):
     """
     Clase para realizar el CRUD sobre la base de datos
     """
+
+    def __init__(self):
+        self.server = None
 
     def limpiar_tree(self, tree, entry_list):
         """
@@ -177,7 +181,26 @@ class Modelo(Sujeto):
             Descripcion: 
             Aplicacion de escritorio desarrollada con Python/Tkinter. Realiza un CRUD sobre una base de datos, y muestra el resultado en un treeview.
             git del proyecto: https://github.com/eliasescalante/AppPossMateriales_v1.git
+
+            Presionar el boton de servidor on para prender el server en Localhost
+            Luego ejecutar el script del client.py para realizar consultas desde el cliente
         """)
+
+    def iniciar_servidor(self):
+        if self.server is None:
+            self.server = subprocess.Popen(["python", "server.py"])
+            return "Servidor iniciado"
+        else:
+            return "El servidor ya está en ejecución"
+
+    def detener_servidor(self):
+        if self.server is not None:
+            self.server.terminate()
+            self.server.wait()
+            self.server = None
+            return print("Servidor detenido")
+        else:
+            return print("El servidor no está en ejecución")
 
     def __str__(self):
         return "Clase que realiza todo el control sobre la vista"

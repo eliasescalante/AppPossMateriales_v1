@@ -5,6 +5,7 @@ Modulo de la vista
 from tkinter import ttk, StringVar, Label, Button, Entry, Menu, W
 from PIL import Image, ImageTk
 from funciones import Modelo
+from server import *
 
 class Vista:
     """
@@ -93,6 +94,12 @@ class Vista:
                             entry_proveedor]),
                             width=10)
         boton_limpiar.place(x=350, y=125)
+
+        boton_servidor_on = Button(self.app, text="Servidor ON", command=self.modelo.iniciar_servidor, width=15)
+        boton_servidor_on.place(x=900, y=5)
+
+        boton_servidor_off = Button(self.app, text="Servidor OFF", command=self.modelo.detener_servidor, width=15)
+        boton_servidor_off.place(x=900, y=50)
 
         # MENU DE LA APLICACION
         menubar = Menu(self.app)
