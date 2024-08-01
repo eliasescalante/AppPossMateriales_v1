@@ -2,6 +2,10 @@ import socketserver
 from modelo import BaseDatos
 import json
 from decoradores import log_evento
+from my_logging import setup_logging
+
+# Configuración del logging
+logger = setup_logging()
 
 @log_evento
 class MyTCPHandler(socketserver.BaseRequestHandler):
@@ -12,6 +16,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
         # recibo datos del cliente
         self.data = self.request.recv(1024).strip()
         print(f"Recibido: {self.data}")
+        logger.info(f"Recibido: {self.data}")
 
         try:
             # Convierto a JSON
@@ -50,11 +55,14 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
                 'status': 'error',
                 'message': str(e)
             }
+            print(f"Error procesando solicitud: {e}")
+            logger.error(f"Error procesando solicitud: {e}")
 
         # Envio la respuesta al cliente
         # convierto la respuesta a JSON y la envio al cliente
         response_data = json.dumps(response)
         print(f"Enviando: {response_data}")
+        logger.info(f"Enviando: {response_data}")
         self.request.sendall(response_data.encode('utf-8'))
 
 if __name__ == "__main__":
@@ -62,4 +70,5 @@ if __name__ == "__main__":
     # creo y ejecuto el servidor TCP
     with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
         print("Servidor iniciado en {}:{}".format(HOST, PORT))
+        logger.info("Servidor iniciado en {}:{}".format(HOST, PORT))
         server.serve_forever()
