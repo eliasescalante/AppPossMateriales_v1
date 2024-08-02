@@ -26,7 +26,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
 
             response = {}
             if action == 'consultar' and product_name:
-                # sonsulto la DB para encontrar productos que coincidan
+                # consulto la DB para encontrar productos que coincidan
                 productos = BaseDatos.select().where(BaseDatos.producto.contains(product_name))
                 if productos:
                     # creo la respuesta de la consulta con los valores encontrados
