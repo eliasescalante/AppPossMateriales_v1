@@ -1,0 +1,21 @@
+patrones package
+================
+
+Submodules
+----------
+
+patrones.observador module
+--------------------------
+
+.. automodule:: patrones.observador
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: patrones
+   :members:
+   :undoc-members:
+   :show-inheritance:
