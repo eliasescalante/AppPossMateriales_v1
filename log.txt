@@ -28,3 +28,6 @@
 2024-08-01 18:27:27.561334 - El cliente consulto en la base de datos
 2024-08-01 18:27:33.439014 - El cliente consulto en la base de datos
 2024-08-01 18:28:48.638334 - El cliente consulto en la base de datos
+2024-08-02 18:11:43.025677 - se ha realizado la accion de '**consultar**'
+2024-08-02 18:11:47.351680 - se ha realizado la accion de '**eliminar**'
+2024-08-02 18:12:21.637055 - se ha realizado la accion de '**alta**'
