@@ -29,10 +29,10 @@ def consultar_producto(producto):
             else:
                 print("No se recibió respuesta del servidor.")
     except Exception as e:
-        # manejar cualquier excepcion que ocurra durante la conexion
+        # manejo cualquier excepcion que ocurra durante la conexion
         print(f"Error al conectar con el servidor: {e}")
 
-# Ejemplo de uso
+# para usar
 if __name__ == "__main__":
     desicion = "si"
     while desicion.lower() == "si":
