@@ -6,3 +6,8 @@
 2024-08-02 18:55:34 - INFO - Enviando: {"Estado de la consulta": "exitoso", "consulta": [{"id": 1, "producto": "Coca Cola gaseosa x1.5", "stock": 100, "costo": 1234.0, "venta": 2400.0, "proveedor": "Reginald"}]}
 2024-08-02 18:55:57 - INFO - Recibido: b'{"action": "consultar", "product": "pepito"}'
 2024-08-02 18:55:57 - INFO - Enviando: {"Estado de la consulta": "exitoso", "consulta": [{"id": 3, "producto": "Pepitos gall.x130gr", "stock": 34, "costo": 780.0, "venta": 1453.0, "proveedor": "Mondelez"}]}
+2024-08-02 19:21:25 - INFO - Servidor iniciado en LocalHost:9999
+2024-08-02 19:23:36 - INFO - Recibido: b'{"action": "consultar", "product": "coca"}'
+2024-08-02 19:23:36 - INFO - Enviando: {"Estado de la consulta": "exitoso", "consulta": [{"id": 1, "producto": "Coca Cola gaseosa x1.5", "stock": 100, "costo": 1234.0, "venta": 2400.0, "proveedor": "Reginald"}]}
+2024-08-02 19:23:55 - INFO - Recibido: b'{"action": "consultar", "product": "fanta"}'
+2024-08-02 19:23:55 - INFO - Enviando: {"Estado de la consulta": "exitoso", "consulta": [{"id": 2, "producto": "Fanta gaseosa x2.25", "stock": 300, "costo": 1345.0, "venta": 2350.0, "proveedor": "Reginald"}, {"id": 5, "producto": "Fanta gaseosa x3lt", "stock": 34, "costo": 2.0, "venta": 3.0, "proveedor": "reginald"}]}

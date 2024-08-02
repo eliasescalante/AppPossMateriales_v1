@@ -35,3 +35,7 @@
 2024-08-02 18:46:04.076472 - se ha realizado la accion de '**alta**'
 2024-08-02 18:55:34.732621 - El cliente consulto en la base de datos
 2024-08-02 18:55:57.829957 - El cliente consulto en la base de datos
+2024-08-02 19:14:02.124404 - se ha realizado la accion de '**consultar**'
+2024-08-02 19:16:16.483957 - se ha realizado la accion de '**alta**'
+2024-08-02 19:23:36.139440 - El cliente consulto en la base de datos
+2024-08-02 19:23:55.572383 - El cliente consulto en la base de datos

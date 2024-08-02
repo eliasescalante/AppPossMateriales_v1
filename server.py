@@ -15,6 +15,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
     def handle(self):
         # recibo datos del cliente
         self.data = self.request.recv(1024).strip()
+        # para registrar
         print(f"Recibido: {self.data}")
         logger.info(f"Recibido: {self.data}")
 
